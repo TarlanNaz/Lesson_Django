@@ -1,4 +1,4 @@
-#from django.http import HttpResponse
+from django.http import HttpResponse
 from django.shortcuts import render
 
 articles = [
@@ -17,8 +17,13 @@ articles = [
 def index(request):
     return render(request,'news_blog/news_list.html', {'articles': articles})
 
-def get_article(request, article_id):
-    return render(request, 'news_blog/news_article.html', {'article': articles[article_id - 1 ]})
+def get_article(request, article_id,):
+    return render(request, 'news_blog/news_article.html', {'article': articles[article_id - 1]})
+
+def me(request):
+    return render(request,'news_blog/about.html',)
+
+#def get_
 
 
 
